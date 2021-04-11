@@ -15,10 +15,10 @@ Latent semantic analysis or term frequency inverse document frequency on the gui
 Data source: scrape Fodors’ travel guides or wikivoyage
 
 
-#### 3. Online Shopper Intentions
+#### 3. Online Shopper Analytics
 
 Google analytics for a website produces a wealth of information on how visitors interacts with a website. Because this is common data to any e-tailer, I'd like to explore the basics. Curious to know and work with common metrics, I'd like to see how well these metrics can serve as indicators of conversions.
 
 Random forest, gradient boosted classifiers
 
-Data source: UCI machine learning repository dataset
+Data source: UCI machine learning repository
