@@ -4,7 +4,7 @@
 
 ## Background
 
-I really enjoy and admire the spirit and the grit of entrepreneurial endeavors. Constantly surrounding myself with friends and family who live lives as entrepreneurs, I often feel very invested in their journey as well as their triumphs and challenges along the way. One of my favorite podcasts has to be Guy Raz’s ‘How I Built This’, whose interviews I find engaging and entertaining.
+I really enjoy and admire the spirit and the grit of entrepreneurial endeavors. Surrounded by friends and family who live lives as entrepreneurs, I often feel very invested in their journey as well as their triumphs and challenges along the way. One of my favorite podcasts has to be Guy Raz’s ‘How I Built This’, whose interviews I find engaging and entertaining.
 
 ## Data
 
