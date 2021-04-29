@@ -1,4 +1,4 @@
-*![](images/rocket_launch.jpg)
+![](images/rocket_launch.jpg)
 
 # Kickstarter Campaigns
 
@@ -16,45 +16,55 @@ Kickstarter data consisted of 213,000 campaigns and 37 features (source: [https:
 
 ![](images/eda_prelim.png)
 
-### Model
+![](images/eda_categories.png)
 
-The statistical test applied is a Welch’s t-test on the difference of means between the winning and losing team samples (without knowing the standard deviations of the winning and losing team populations, the student’s t-test is not well suited here). Because the sample sizes are sufficiently large, we can additionally consider that the central limit theorem applies and therefore we can reasonably assert that the distribution for the difference of means approximates the normal distribution.
+![](images/eda_launch_days.png)
+
+### Baseline Models
+
+#### Logistic Regression 
+
+With its quickness to train and predict and interpretability, this presented as a place to start.
+
+![](images/lr_confusion_matrix_no_nlp.png)
+
+Logistic regression performed reasonably with a 71.0% accuracy and 71% f1-score. 
+
+#### Gradient Boosting Classifier
+
+Interested in ensemble modeling, gradient boosting presents as one with tremendous predictive power, but also little interpretability and a challenge to tune.
+
+![](images/gb_confusion_matrix_no_nlp.png)
+
+The gradient boosting classifier performed with a 74.4% accuracy and 74% f1-score. 
+
+#### Random Forest Classifier
+
+Interested in ensemble modeling, random forest also presents as a contender sharing qualities with gradient boosting; albeit with some variation as certain tradeoffs take place.
+
+![](images/rf_confusion_matrix_no_nlp.png)
+
+The random forest classifier fell a little short in comparison to the gradient boosting classifier with a 72.2% accuracy and 72% f1-score.
 
 ### Results
 
-For each of the play statistics below, the null hypothesis is rejected - there is statistical evidence to infer that both offensive and defensive game play stats play into wins.
+With the addition of NLP features from the 'blurb' feature, we see model improvement and significant feature importances derived from words extracted the blurbs.
 
-With a significance level selected at 5% and a conservative Bonferroni correction application which further sets the significance level at 1% for each t-test, the Welch’s t-tests results of infinitesimally small p-values provide suitable statistical evidence. 
+![](images/rf_confusion_matrix_add_nlp.png)
 
-![](images/EFG.png)
+![](images/rf_roc_curve.png)
 
-p-value: 3.029870529831025e-129
-
-![](images/OREB.png)
-
-p-value: 3.04422770092005e-12
-
-![](images/FTAR.png)
-
-p-value: 1.4689448438961602e-07
-
-![](images/TO.png)
-
-p-value: 7.22946836638982e-07
-
-![](images/DREB.png)
-
-p-value: 2.969990853938123e-1
+![](images/rf_feat_imp.png)
 
 ### Future Analysis
 
-With more recently available NBA stats published on opponent's shooting, exploring other robust measures of defensive play such as a block attempts rate (BLKA rate), a ratio of block attempts to an opponent's field goal attempts, would add to create a more full picture of the analysis.
+With high dimensionality added up between all the features, particularly the categorical and text features, PCA or other dimensionality reduction techniques would be useful in capturing variance in a model while minimizing the number of components.
 
-A redesign of the statistical tests could for instance look at the top and bottom 10 teams across a number of NBA seasons to compare pairs of stats for statistical significance such as OREB% and DREB%, FGA and BLKA rates, etc.
+I'm also highly interested in applying convolutional neural networks to campaign photos. The original dataset contains the URLs to the photos. Given the nature and objective of crowdfunding, these photos hold a strong position as a feature.
 
 ### Acknowledgements
 
 Thanks to Juliana Duncan, Dan Rupp & Kiara Hearn for their help and guidance during this project.
 
 ### References
-API client package: [nba-api](https://pypi.org/project/nba-api/)
+Dataset: [https://webrobots.io/](https://webrobots.io/)
