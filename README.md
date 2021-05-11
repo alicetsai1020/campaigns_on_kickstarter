@@ -1,4 +1,4 @@
-![](images/rocket_launch.jpg)
+![](images/header_image.jpg)
 
 # Kickstarter Campaigns
 
